@@ -4,8 +4,6 @@ A 2D platformer where you switch between two different characters of two differe
 
 Current Issues
 --------------
--when the platforms are invisible you still collide
-
 -you can infinitely jump...the colliders arent calling ontriggerenter2D to say that the character is on the ground...need to figure that out.
 
 Goals/Ideas
