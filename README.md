@@ -6,6 +6,8 @@ Current Issues
 --------------
 -when the platforms are invisible you still collide
 
+-you can infinitely jump...the colliders arent calling ontriggerenter2D to say that the character is on the ground...need to figure that out.
+
 Goals/Ideas
 -----------
 -camera more zoomed in on the player and follow him around, a little more than side scrolling also up and down
