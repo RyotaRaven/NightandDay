@@ -17,21 +17,25 @@ public class DayNightChange : MonoBehaviour {
 	}
 	//8 is day layer, 9 is night layer
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
-		if(Input.GetButtonDown("Fire1") || Input.GetAxis("Fire2")>.05)
+		if(Input.GetButtonDown("Fire1"))
 		{
 			if(isNight)
 			{
 				isNight=false;
 				camera.backgroundColor = day;
 				camera.cullingMask = (1<< LayerMask.NameToLayer("Day")) | (1<<0);
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, true);			
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"), 0, false);
 			}
 			else
 			{
-				isNight=true;
-				camera.backgroundColor = night;
+					isNight=true;
+					camera.backgroundColor = night;
 				camera.cullingMask = (1<< LayerMask.NameToLayer("Night"))| (1<<0);
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, false);			
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"),0, true);
 			}
 		}
 	}
