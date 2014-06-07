@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
 
 	public int speed;
 	public int jumpHeight;
+	public Material[] dayNight;
+	int player= 0;
 	float x,y;
 	bool onGround;
 
@@ -24,9 +26,15 @@ public class PlayerMovement : MonoBehaviour
 		pos.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		transform.position = pos;
 		//jump
-		if(Input.GetButtonDown("Jump") )
+		if(Input.GetButtonDown("Jump") && onGround)
 		{
 			rigidbody2D.AddForce(new Vector2(0,jumpHeight));
+		}
+		if(Input.GetButtonDown ("Fire1"))
+		{
+			if(player==0) player=1;
+			else player=0;
+			renderer.material= dayNight[player];
 		}
 	}
 
