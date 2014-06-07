@@ -7,6 +7,5 @@
 *.unityproj
 *.sln
 # *.bin
-*.unity
 *.userprefs
 *.suo
