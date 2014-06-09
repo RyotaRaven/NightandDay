@@ -9,7 +9,7 @@ Current Issues
 
 Goals/Ideas
 -----------
--camera more zoomed in on the player and follow him around, a little more than side scrolling also up and down
+-camera more zoomed in on the player and follow him around, a little more than side scrolling also up and down- kind of a hacky solution right now
 
 -create working checkpoints
 
@@ -21,6 +21,3 @@ Goals/Ideas
 
 -a two-player mode where its split screend or something and each controls one of the characters in the different worlds in order to progress, would need a different kind of level design for this
 
--maybe a lever mechanic that opens doors that are on platforms only reachable by one character...thatd be nice in the one player mode as well
-
--walls for certain areas so you have to switch to enter or can be removed with lever
