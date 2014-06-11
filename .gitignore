@@ -10,3 +10,4 @@
 *.userprefs
 *.suo
 *.ini
+*Thumbs.db*
