@@ -30,4 +30,6 @@ Goals/Ideas
 
 -make levels out of images(maybe save the patforms as their own file the background as its own file ect)
 
--distinction in character design between night and day
+-distinction in character design between night and day and setting distinction
+
+-paralax
