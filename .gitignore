@@ -11,3 +11,8 @@
 *.suo
 *.ini
 *Thumbs.db*
+Builds/*
+*EditorSettings.asset
+*EditorBuildSettings.asset
+*DynamicsManager.asset
+*EditorSettings.asset
