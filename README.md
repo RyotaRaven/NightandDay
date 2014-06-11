@@ -14,7 +14,20 @@ Goals/Ideas
 
 -actual graphics 
 
--points, and something like stars to collect (like collecting coins) and treasure chests (only one of them might see the treasure)
+-points, and something like stars to collect (like collecting coins) and treasure chests (only one of them might see the treasure) (stars/suns)
 
 -a two-player mode where its split screend or something and each controls one of the characters in the different worlds in order to progress, would need a different kind of level design for this
 
+-Start without day/night powers things get day and get night- they are more of the platforms as you can see them. (REPLAYABILITY) 
+
+-start off on ground work toward sky
+
+-need to wait/enemies-obsticales/ timed jumps
+
+-timed levers
+
+-objects to pick up to put on pressure plates to open doors
+
+-make levels out of images(maybe save the patforms as their own file the background as its own file ect)
+
+-distinction in character design between night and day
