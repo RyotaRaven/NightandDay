@@ -6,14 +6,16 @@ public class ReSpawn : MonoBehaviour {
 	float spawnx;
 	float spawny;
 
+	void Start() {
+	}
+
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		//TODO: set respawn location based on the current level/checkpoint
-		if(col.collider2D.tag=="Player") col.transform.position=new Vector2(spawnx, spawny);
+		// Set respawn location based on the player's current level/checkpoint
+		if(col.collider2D.tag=="Player") {
+			Player p = col.gameObject.GetComponent<Player>();
+			p.transform.position = new Vector2(p.respawnX, p.respawnY);
+		}
 	}
-	public static void setSpawnPoint(float x, float y)
-	{
-		spawnx = x;
-		spawny = y;
-	}
+
 }
