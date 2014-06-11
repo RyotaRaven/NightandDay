@@ -4,36 +4,39 @@ using System.Collections;
 public class WallUnlock : MonoBehaviour {
 
 	
-	public GameObject[] Triggers;
-	public MeshRenderer[] Obstacle;
+	public GameObject[] triggers;
+	public MeshRenderer[] obstacle;
 	private int toOpen;
 	private bool[] canOpen;
 	public GameObject[] wall;
-	private bool Open;
+	private bool open;
 	
 	// Use this for initialization
 	void Start () { 
-		canOpen = new bool[Triggers.Length];
+		canOpen = new bool[triggers.Length];
+		updateWallOpenStatus();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
+	}
+
+	public void updateWallOpenStatus() {
 		for (int i=0; i<canOpen.Length; i++)
-			canOpen [i] = Triggers [i].GetComponent<Lever> ().activated;
-		if(canOpen.Length>=2)
+			canOpen [i] = triggers [i].GetComponent<Lever> ().activated;
+		
+		// Sets the open bool
+		open=canOpen[0];
+		for(int x=0; x<canOpen.Length; x++)
 		{
-			Open=canOpen[0] && canOpen[1];
-			for(int x=2; x<canOpen.Length; x++)
-			{
-				Open= Open &&canOpen[x];
-			}
+			open &= canOpen[x];
 		}
-		else
-			Open=canOpen[0];
-		if (Open)
+		
+		
+		if (open)
 		{
-			foreach(MeshRenderer m in Obstacle)
+			foreach(MeshRenderer m in obstacle)
 			{
 				m.enabled=false;
 			}
@@ -44,7 +47,7 @@ public class WallUnlock : MonoBehaviour {
 		}
 		else
 		{
-			foreach(MeshRenderer m in Obstacle)
+			foreach(MeshRenderer m in obstacle)
 			{
 				if(m.enabled==false) m.enabled=true;
 			}
@@ -53,6 +56,7 @@ public class WallUnlock : MonoBehaviour {
 				if(o.collider2D.isTrigger==true) o.collider2D.isTrigger=false;
 			}
 		}
+
 	}
 }
 
