@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 	// Current position
 	float x,y;
 	bool onGround;
+	bool facingRight=true;
+	bool isMoving=false;
 	// Respawn location
 	public float respawnX, respawnY;
 
@@ -27,6 +29,20 @@ public class Player : MonoBehaviour
 		onGround = Jump.onGround;
 		//move left and right
 		Vector3 pos = transform.position;
+		if(Input.GetAxis ("Horizontal")!=0 && !isMoving)
+	    {
+			if(Input.GetAxis ("Horizontal")>0 && !facingRight)
+			{
+				Flip ();
+			}
+			if(Input.GetAxis ("Horizontal")<0 && facingRight)
+			{
+				Flip ();
+			}
+			isMoving=true;
+		}
+		else if(Input.GetAxis ("Horizontal")==0)
+			isMoving=false;
 		pos.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
 		transform.position = pos;
 		//jump
@@ -46,6 +62,14 @@ public class Player : MonoBehaviour
 	{
 		respawnX = x;
 		respawnY = y;
+	}
+
+	void Flip()
+	{
+		facingRight = !facingRight;
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 
 }
