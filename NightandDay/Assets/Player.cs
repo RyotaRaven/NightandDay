@@ -6,14 +6,13 @@ public class Player : MonoBehaviour
 
 	public int speed;
 	public int jumpHeight;
-	public Material[] dayNight;
+	public Sprite[] dayNightSprites;
 	int playerSkin = 0;
 	// Current position
 	float x,y;
 	bool onGround;
 	// Respawn location
 	public float respawnX, respawnY;
-
 
 	// Use this for initialization
 	void Start () 
@@ -39,7 +38,7 @@ public class Player : MonoBehaviour
 		{
 			if(playerSkin==0) playerSkin=1;
 			else playerSkin=0;
-			renderer.material= dayNight[playerSkin];
+			gameObject.GetComponent<SpriteRenderer>().sprite= dayNightSprites[playerSkin];
 		}
 	}
 
