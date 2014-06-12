@@ -33,3 +33,5 @@ Goals/Ideas
 -distinction in character design between night and day and setting distinction
 
 -paralax
+
+-can earn costumes
