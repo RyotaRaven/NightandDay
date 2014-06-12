@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
 	void Start () 
 	{
 		respawnX = -5.3f;
-		respawnY = -1.0f;
+		respawnY = 0.0f;
 	}
 	
 	// Update is called once per frame
