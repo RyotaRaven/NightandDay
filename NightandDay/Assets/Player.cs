@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
 	public int speed;
 	public int jumpHeight;
 	public Sprite[] dayNightSprites;
+	public float respawnX, respawnY;
+	public WeightedEntity carriedEntity;
+
 	int playerSkin = 0;
 	// Current position
 	float x,y;
@@ -14,7 +17,6 @@ public class Player : MonoBehaviour
 	bool facingRight=true;
 	bool isMoving=false;
 	// Respawn location
-	public float respawnX, respawnY;
 
 	// Use this for initialization
 	void Start () 

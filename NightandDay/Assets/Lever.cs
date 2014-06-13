@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Lever : MonoBehaviour {
+public class Lever : ToggleActivator {
 
 	public GameObject lever;
-	public GameObject wall;
 	public Sprite[] leverSprites;  // Initialized in the editor
 	int whichLever = 0;
-
-	public bool activated=false;
 
 	void OnTriggerStay2D (Collider2D col)
 	{

@@ -23,11 +23,11 @@ public class WallUnlock : MonoBehaviour {
 	}
 
 	public void updateWallOpenStatus() {
-		for (int i=0; i<canOpen.Length; i++)
-			canOpen [i] = triggers [i].GetComponent<Lever> ().activated;
+		for (int i=0; i < triggers.Length; i++)
+			canOpen[i] = triggers[i].GetComponent<ToggleActivator>().activated;
 		
 		// Sets the open bool
-		open=canOpen[0];
+		open = canOpen[0];
 		for(int x=0; x<canOpen.Length; x++)
 		{
 			open &= canOpen[x];
