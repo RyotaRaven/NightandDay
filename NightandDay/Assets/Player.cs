@@ -9,13 +9,13 @@ public class Player : MonoBehaviour
 	public Sprite[] dayNightSprites;
 	public float respawnX, respawnY;
 	public WeightedEntity carriedEntity;
-
 	int playerSkin = 0;
 	// Current position
 	float x,y;
 	bool onGround;
 	bool facingRight=true;
 	bool isMoving=false;
+	//bool holdingSomething=false;
 	// Respawn location
 
 	// Use this for initialization
@@ -73,5 +73,7 @@ public class Player : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+
 
 }
