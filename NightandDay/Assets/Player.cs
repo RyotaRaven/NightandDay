@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
 			ch.transform.position=temp;
 			Debug.Log ("Drop");
 			ch.AddComponent("Rigidbody2D");
+			ch.collider2D.isTrigger=false;
 			holdingSomething=false;
 		}
 	}
@@ -102,6 +103,7 @@ public class Player : MonoBehaviour
 				Vector2 temp=col.transform.position;
 				temp.y+=.25f;
 				col.transform.position=temp;
+				col.collider2D.isTrigger=true;
 				if(col.GetComponent<Rigidbody2D>()!=null)
 				{
 					Destroy (col.attachedRigidbody);

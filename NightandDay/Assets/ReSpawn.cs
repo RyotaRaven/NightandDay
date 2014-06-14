@@ -16,6 +16,14 @@ public class ReSpawn : MonoBehaviour {
 			Player p = col.gameObject.GetComponent<Player>();
 			p.transform.position = new Vector2(p.respawnX, p.respawnY+2);
 		}
+		if(col.collider2D.tag=="WeightedObject")
+		{
+			GameObject p=GameObject.Find ("Player");
+			Vector2 goBack=p.transform.position;
+			goBack.x+=1;
+			goBack.y-=1;
+			col.transform.position= goBack;
+		}
 	}
 
 }

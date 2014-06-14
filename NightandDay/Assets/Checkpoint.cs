@@ -8,9 +8,12 @@ public class Checkpoint : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col)
 	{
 
-		if(col.collider2D.tag=="Player" && isFinalCheckpoint) {
+		if(col.collider2D.tag=="Player" && isFinalCheckpoint) 
+		{
 			LoadLevel.loadNextLevel();
-		} else {
+		} 
+		else 
+		{
 			Player p = col.gameObject.GetComponent<Player>();
 			p.setSpawnPoint(transform.position.x, transform.position.y);
 		}
