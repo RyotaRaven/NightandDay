@@ -63,14 +63,18 @@ public class Player : MonoBehaviour
 		//dropping objects
 		if(Input.GetButtonDown ("Fire3") && holdingSomething)
 		{
-			Debug.Log ("Drop");
 			GameObject ch= GameObject.Find ("Cube");
+			ch.tag="WeightedObject";
 			ch.transform.parent=null;
-			holdingSomething=false;
+			Vector2 temp=ch.transform.position;
+			temp.y +=.5f;
+			ch.transform.position=temp;
+			Debug.Log ("Drop");
 			if(ch.GetComponent<Rigidbody2D>()!=null)
 			{
 				ch.GetComponent<Rigidbody2D>().isKinematic=false;
 			}
+			holdingSomething=false;
 		}
 	}
 		
@@ -90,12 +94,12 @@ public class Player : MonoBehaviour
 
 	void OnTriggerStay2D(Collider2D col)
 	{
-		if(col.collider2D.tag=="WeightedObject")
+		if(col.collider2D.tag=="WeightedObject" && !holdingSomething)
 		{
 			if(Input.GetButtonDown("Fire3"))
 			{
 				holdingSomething=true;
-				Debug.Log ("PickUp");
+				col.collider2D.tag="HeldObject";
 				col.gameObject.layer= 0<<LayerMask.NameToLayer("Default");
 				col.transform.parent= transform;
 				Vector2 temp=col.transform.position;
