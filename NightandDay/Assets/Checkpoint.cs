@@ -12,7 +12,7 @@ public class Checkpoint : MonoBehaviour {
 			LoadLevel.loadNextLevel();
 		} else {
 			Player p = col.gameObject.GetComponent<Player>();
-			p.setSpawnPoint(this.transform.position.x, this.transform.position.y);
+			p.setSpawnPoint(transform.position.x, transform.position.y);
 		}
 	}
 

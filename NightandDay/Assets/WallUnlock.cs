@@ -36,7 +36,6 @@ public class WallUnlock : MonoBehaviour {
 		
 		if (open)
 		{
-			Debug.Log ("A wall opened somewhere");
 			foreach(MeshRenderer m in obstacle)
 			{
 				m.enabled=false;

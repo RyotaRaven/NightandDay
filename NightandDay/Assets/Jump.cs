@@ -7,12 +7,12 @@ public class Jump : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if(col.collider2D.tag=="Ground") onGround = true;
+		if(col.collider2D.tag=="Ground" || col.collider2D.tag=="WeightedObject") onGround = true;
 
 	}
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
-		if(col.collider2D.tag=="Ground") onGround = false;
+		if(col.collider2D.tag=="Ground" || col.collider2D.tag=="WeightedObject") onGround = false;
 	}
 }
