@@ -70,10 +70,7 @@ public class Player : MonoBehaviour
 			temp.y +=.5f;
 			ch.transform.position=temp;
 			Debug.Log ("Drop");
-			if(ch.GetComponent<Rigidbody2D>()!=null)
-			{
-				ch.GetComponent<Rigidbody2D>().isKinematic=false;
-			}
+			ch.AddComponent("Rigidbody2D");
 			holdingSomething=false;
 		}
 	}
@@ -103,11 +100,12 @@ public class Player : MonoBehaviour
 				col.gameObject.layer= 0<<LayerMask.NameToLayer("Default");
 				col.transform.parent= transform;
 				Vector2 temp=col.transform.position;
-				temp.y+=.5f;
+				temp.y+=.25f;
 				col.transform.position=temp;
 				if(col.GetComponent<Rigidbody2D>()!=null)
 				{
-					col.GetComponent<Rigidbody2D>().isKinematic=true;
+					Destroy (col.attachedRigidbody);
+					//col.GetComponent<Rigidbody2D>().isKinematic=true;
 				}
 			}
 		}
