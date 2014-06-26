@@ -12,6 +12,8 @@ Current Issues
 
 -picking up of the item seems kinda primative
 
+-Dropping a picked up item into the pit means you lost it forever...need to figure out a way to respawn cubes that fell.
+
 Goals/Ideas
 -----------
 -camera more zoomed in on the player and follow him around, a little more than side scrolling also up and down- kind of a hacky solution right now
@@ -28,7 +30,7 @@ Goals/Ideas
 
 -start off on ground work toward sky
 
--need to wait/enemies-obsticales/ timed jumps
+-need to wait/enemies-obsticales/ timed jumps (Maybe a FEZ like no enemies approach-all the chalenge from the puzzles?)
 
 -timed levers
 
