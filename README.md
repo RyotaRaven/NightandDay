@@ -6,7 +6,7 @@ Current Issues
 --------------
 -original respawn point hardcoded
 
--carrying objects seems to mess up both flipping and changing colors...seems to overload game slightly :(
+-something has changed to cause the player to not walk in the right direction all the time and the color change is also bugged cant figure out why
 
 -not sure how to do layers of carryable objects- even set to defualt which shouldnt detect collisions it floats in midair
 
