@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
 	// Respawn location
 	public float respawnX, respawnY;
 	public WeightedEntity carriedEntity;
-	int playerSkin = 0;
+	bool playerSkin = false;
 	// Current position
 	float x,y;
 	bool onGround;
@@ -21,8 +21,6 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		respawnX = -5.3f;
-		respawnY = 0.0f;
 	}
 	
 	// Update is called once per frame
@@ -56,9 +54,15 @@ public class Player : MonoBehaviour
 		//changing the character based on day and night
 		if(Input.GetButtonDown ("Fire1"))
 		{
-			if(playerSkin==0) playerSkin=1;
-			else playerSkin=0;
-			gameObject.GetComponent<SpriteRenderer>().sprite= dayNightSprites[playerSkin];
+			if(gameObject.GetComponent<SpriteRenderer>())
+			{
+				if(!playerSkin) playerSkin=true;
+				else playerSkin=false;
+				if(playerSkin)
+					gameObject.GetComponent<SpriteRenderer>().sprite= dayNightSprites[1];
+				else gameObject.GetComponent<SpriteRenderer>().sprite= dayNightSprites[0];
+			}
+
 		}
 		//dropping objects
 		if(Input.GetButtonDown ("Fire3") && holdingSomething)

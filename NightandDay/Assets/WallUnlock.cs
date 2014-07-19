@@ -4,39 +4,36 @@ using System.Collections;
 public class WallUnlock : MonoBehaviour {
 
 	
-	public GameObject[] triggers;
-	public MeshRenderer[] obstacle;
+	public GameObject[] Triggers;
+	public MeshRenderer[] Obstacle;
 	private int toOpen;
 	private bool[] canOpen;
 	public GameObject[] wall;
-	private bool open;
+	private bool Open;
 	
 	// Use this for initialization
 	void Start () { 
-		canOpen = new bool[triggers.Length];
-		updateWallOpenStatus();
+		canOpen = new bool[Triggers.Length];
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-	}
-
-	public void updateWallOpenStatus() {
-		for (int i=0; i < triggers.Length; i++)
-			canOpen[i] = triggers[i].GetComponent<ToggleActivator>().activated;
-		
-		// Sets the open bool
-		open = canOpen[0];
-		for(int x=0; x<canOpen.Length; x++)
+		for (int i=0; i<canOpen.Length; i++)
+			canOpen [i] = Triggers [i].GetComponent<Lever> ().activated;
+		if(canOpen.Length>=2)
 		{
-			open &= canOpen[x];
+			Open=canOpen[0] && canOpen[1];
+			for(int x=2; x<canOpen.Length; x++)
+			{
+				Open= Open &&canOpen[x];
+			}
 		}
-		
-		
-		if (open)
+		else
+			Open=canOpen[0];
+		if (Open)
 		{
-			foreach(MeshRenderer m in obstacle)
+			foreach(MeshRenderer m in Obstacle)
 			{
 				m.enabled=false;
 			}
@@ -47,7 +44,7 @@ public class WallUnlock : MonoBehaviour {
 		}
 		else
 		{
-			foreach(MeshRenderer m in obstacle)
+			foreach(MeshRenderer m in Obstacle)
 			{
 				if(m.enabled==false) m.enabled=true;
 			}
@@ -56,7 +53,6 @@ public class WallUnlock : MonoBehaviour {
 				if(o.collider2D.isTrigger==true) o.collider2D.isTrigger=false;
 			}
 		}
-
 	}
 }
 

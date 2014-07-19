@@ -14,7 +14,8 @@ public class DayNightChange : MonoBehaviour {
 		day= new Color32(163,199,255,255);
 		camera.clearFlags = CameraClearFlags.SolidColor;
 		//ignoring collisions for night
-		setDay();
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, true);			
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"), 0, false);
 	
 	}
 	//8 is day layer, 9 is night layer
@@ -25,28 +26,21 @@ public class DayNightChange : MonoBehaviour {
 		{
 			if(isNight)
 			{
-				setDay();
-			} else {
-				setNight();
+				isNight=false;
+				camera.backgroundColor = day;
+				camera.cullingMask = (1<< LayerMask.NameToLayer("Day")) | (1<<0);
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, true);			
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"), 0, false);
+			}
+			else
+			{
+				isNight=true;
+				camera.backgroundColor = night;
+				camera.cullingMask = (1<< LayerMask.NameToLayer("Night"))| (1<<0);
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, false);			
+				Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"),0, true);
 			}
 		}
-	}
-
-	private void setDay() {
-		isNight=false;
-		camera.backgroundColor = day;
-		camera.cullingMask = (1<< LayerMask.NameToLayer("Day")) | (1<<0);
-		//ignoring collisions for night
-		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, true);
-		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"), 0, false);
-	}
-
-	private void setNight() {
-		isNight=true;
-		camera.backgroundColor = night;
-		camera.cullingMask = (1<< LayerMask.NameToLayer("Night"))| (1<<0);
-		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Night"),0, false);			
-		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Day"),0, true);
 	}
 
 	
