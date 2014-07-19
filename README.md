@@ -6,15 +6,19 @@ Current Issues
 --------------
 -original respawn point hardcoded
 
--carrying objects seems to mess up both flipping and changing colors...seems to overload game slightly :(
+-something has changed to cause the player to not walk in the right direction all the time and the color change is also bugged cant figure out why
 
 -not sure how to do layers of carryable objects- even set to defualt which shouldnt detect collisions it floats in midair
 
 -picking up of the item seems kinda primative
 
+-Dropping a picked up item into the pit means you lost it forever...need to figure out a way to respawn cubes that fell.
+
 Goals/Ideas
 -----------
 -camera more zoomed in on the player and follow him around, a little more than side scrolling also up and down- kind of a hacky solution right now
+
+-make invisible platforms semi visible in some way so you dont take leaps of faith
 
 -have edges of the level so the camera will stop moving and you cant go past could do invisible walls- if I can figure out selective collisions I would still want these to collide even though you can't see them or just make a pretty border edge whichever i like more
 
@@ -28,7 +32,7 @@ Goals/Ideas
 
 -start off on ground work toward sky
 
--need to wait/enemies-obsticales/ timed jumps
+-need to wait/enemies-obsticales/ timed jumps (Maybe a FEZ like no enemies approach-all the chalenge from the puzzles?)
 
 -timed levers
 
